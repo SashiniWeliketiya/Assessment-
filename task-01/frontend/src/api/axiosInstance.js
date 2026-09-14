@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'npx plugins add vercel/vercel-plugin',
+  baseURL: 'https://ecommerce-backend-3h2jzepfi-sashini.vercel.app/',
 });
 
 export default API;

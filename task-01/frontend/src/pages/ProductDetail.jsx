@@ -10,7 +10,6 @@ const ProductDetail = () => {
   
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [addedMessage, setAddedMessage] = useState(false); // මැසේජ් එක පෙන්වීමට state එක
 
   // Default short descriptions per category or general fallback
   const categoryDescriptions = {
@@ -47,12 +46,8 @@ const ProductDetail = () => {
     try {
       if (addToCart && product) {
         addToCart(product);
-        setAddedMessage(true); // බටන් එක ඔබපු ගමන් මැසේජ් එක පෙන්වයි
-        
-        // තත්පර 2කින් මැසේජ් එක නැවත අപ്രത്യක්ෂ වීමට
-        setTimeout(() => {
-          setAddedMessage(false);
-        }, 2000);
+        console.log('Added to cart successfully:', product.name);
+        // අවශ්‍ය නම් කාට් එකට ගිය බව පෙන්වීමට alert එකක් හෝ notification එකක් තබාගත හැක
       } else {
         console.error('addToCart function or product is missing');
       }
@@ -129,13 +124,6 @@ const ProductDetail = () => {
             >
               {isAvailable ? 'Add to Cart' : 'Out of Stock'}
             </button>
-
-            {/* සාර්ථකව ඇඩ් වූ බව පෙන්වන මැසේජ් එක */}
-            {addedMessage && (
-              <p style={{ color: '#16a34a', fontSize: '14px', textAlign: 'center', marginTop: '10px', fontWeight: '600' }}>
-                ✓ Successfully added to cart!
-              </p>
-            )}
           </div>
         </div>
 

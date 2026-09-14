@@ -1,0 +1,11 @@
+{
+  "remoteName": "origin",
+  "projects": [
+    {
+      "id": "prj_2msP7JJAKRSfVeBPVurotFFGbwTO",
+      "name": "pos-order-inventory-system1",
+      "directory": "pos-frontend",
+      "orgId": "team_5soa0pQkV7aUQuYJWlgCWoge"
+    }
+  ]
+}

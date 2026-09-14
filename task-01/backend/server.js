@@ -12,22 +12,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Routes
-app.use('/api/products', productRoutes);
-app.use('/api/checkout', checkoutRoutes);
-app.use('/api/payments', paymentRoutes);
-app.use('/api/orders', orderRoutes);
 
-
-const MONGO_URI = process.env.MONGO_URI;
-if (MONGO_URI) {
-  mongoose.connect(MONGO_URI)
-    .then(() => {
-      console.log('MongoDB Connected');
-      startCronJobs();
-    })
-    .catch(err => console.error('DB Connection Error:', err));
-}
+module.exports = app;
 
 
 if (process.env.NODE_ENV !== 'production') {
@@ -35,4 +21,18 @@ if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 }
 
-module.exports = app;
+// Routes
+app.use('/api/products', productRoutes);
+app.use('/api/checkout', checkoutRoutes);
+app.use('/api/payments', paymentRoutes);
+app.use('/api/orders', orderRoutes);
+
+// MongoDB Connection
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/techloom-ecommerce';
+mongoose.connect(MONGO_URI)
+  .then(() => {
+    console.log('MongoDB Connected');
+    startCronJobs();
+    app.listen(5000, () => console.log('Server running on port 5000'));
+  })
+  .catch(err => console.error('DB Connection Error:', err));

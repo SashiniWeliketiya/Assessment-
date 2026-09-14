@@ -1,22 +1,32 @@
-# Full-Stack E-Commerce Application Assessment
+# Techloom.ai - Software Engineer Intern Practical Assessment
 
-This repository contains a full-stack e-commerce application structured into two main components: a React frontend and a Node.js/Spring Boot backend.
+This repository contains the completed submission for the Techloom.ai Software Engineer Intern practical assessment, consisting of two main tasks: a POS Order & Inventory System and an E-Commerce Checkout & Payment System.
 
----
+## Live Deployment Links
 
-## 🚀 Projects Overview
-
-### 1. Frontend (`/frontend`)
-* **Description:** The client-side user interface built for the e-commerce platform. Handles product listings, shopping cart state, and navigation.
-* **Tech Stack:** React, Vite, JavaScript, CSS / Tailwind CSS
-* **Deployment:** Live production deployment hosted on **Vercel**.
-
-### 2. Backend (`/backend`)
-* **Description:** The server-side API responsible for routing, controllers, database connectivity, and core business logic.
-* **Tech Stack:** Node.js, Express, Java Spring Boot, MongoDB / MySQL
+* **Task 01 (POS Order & Inventory System):**:E-Commerce System
+* **Task 02 (E-Commerce Checkout & Payment System):** :pos-frontend
+* **GitHub Repository:** https://github.com/SashiniWeliketiya/Assessment-
 
 ---
 
-## Live Demo
-task01: https://ecommerce-ten-tau-91.vercel.app/
-task02: https://pos-order-inventory-system1-nb84o30pb-sashini.vercel.app/
+## Tech Stack
+
+* **Frontend:** React.js
+* **Backend:** Node.js (Express) / Java Spring Boot
+* **Database:** MongoDB 
+* **Hosting:** Vercel / Render
+
+---
+
+## Repository Structure
+
+```text
+/Assessment-
+├── README.md
+├── /task-01
+│   ├── /backend
+│   └── /frontend
+└── /task-02
+    ├── /backend
+    └── /frontend

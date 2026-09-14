@@ -31,5 +31,6 @@ This repository contains the completed submission for the Techloom.ai Software E
     ├── /backend
     └── /frontend
 
+```
 
 http://localhost:5173/

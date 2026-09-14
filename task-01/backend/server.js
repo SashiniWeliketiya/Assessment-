@@ -36,3 +36,7 @@ mongoose.connect(MONGO_URI)
     app.listen(5000, () => console.log('Server running on port 5000'));
   })
   .catch(err => console.error('DB Connection Error:', err));
+
+  app.get('/', (req, res) => {
+  res.send('E-Commerce Backend is Running Successfully!');
+});

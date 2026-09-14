@@ -10,6 +10,7 @@ const ProductDetail = () => {
   
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [addedMessage, setAddedMessage] = useState(false);
 
   // Default short descriptions per category or general fallback
   const categoryDescriptions = {
@@ -42,6 +43,23 @@ const ProductDetail = () => {
     fetchProduct();
   }, [id]);
 
+  const handleAddToCart = () => {
+    try {
+      if (addToCart && product) {
+        addToCart(product);
+        setAddedMessage(true);
+        // තත්පර 2කින් මැසේජ් එක නැවත අപ്രത്യക്ഷ වීමට
+        setTimeout(() => {
+          setAddedMessage(false);
+        }, 2000);
+      } else {
+        console.error('addToCart function or product is missing');
+      }
+    } catch (err) {
+      console.error('Error adding to cart:', err);
+    }
+  };
+
   if (loading) return <div style={{ textAlign: 'center', padding: '50px', fontFamily: "'Inter', sans-serif" }}>Loading product details...</div>;
   if (!product) return <div style={{ textAlign: 'center', padding: '50px', fontFamily: "'Inter', sans-serif" }}>Product not found.</div>;
 
@@ -49,7 +67,6 @@ const ProductDetail = () => {
   const isAvailable = availableStock > 0;
   const displayImage = product.imageUrl || localImageMap[product.name] || fallbackImage;
 
-  // Select dynamic or categorized short description
   const displayDescription = product.description && product.description.trim() !== ''
     ? product.description
     : (categoryDescriptions[product.name] || 'High-quality item crafted with top materials for long-lasting performance and reliability.');
@@ -95,7 +112,7 @@ const ProductDetail = () => {
             </div>
 
             <button
-              onClick={() => addToCart(product)}
+              onClick={handleAddToCart}
               disabled={!isAvailable}
               style={{
                 width: '100%',
@@ -111,6 +128,12 @@ const ProductDetail = () => {
             >
               {isAvailable ? 'Add to Cart' : 'Out of Stock'}
             </button>
+
+            {addedMessage && (
+              <p style={{ color: '#16a34a', fontSize: '14px', textAlign: 'center', marginTop: '10px', fontWeight: '600' }}>
+                ✓ Successfully added to cart!
+              </p>
+            )}
           </div>
         </div>
 

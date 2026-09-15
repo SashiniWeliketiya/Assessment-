@@ -4,7 +4,7 @@ This repository contains the completed submission for the Techloom.ai Software E
 
 ## Live Deployment Links
 
-* **Task 01 (POS Order & Inventory System):**:https://ecommerce-ten-tau-91.vercel.app/
+* **Task 01 (POS Order & Inventory System):**:https://ecommerce-ashy-mu-44.vercel.app/
 * **Task 02 (E-Commerce Checkout & Payment System):** :https://pos-order-inventory-system1-nb84o30pb-sashini.vercel.app/
 * **GitHub Repository:** https://github.com/SashiniWeliketiya/Assessment-
 

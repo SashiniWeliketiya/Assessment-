@@ -37,7 +37,7 @@ exports.createCheckoutSession = async (req, res) => {
 
       totalAmount += product.price * item.quantity;
 
-      // Order Schema එකට ගැලපෙන ලෙස productId සහ price ලෙස යොදන්න
+      
       orderItems.push({
         productId: product._id,
         quantity: item.quantity,

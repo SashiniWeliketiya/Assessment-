@@ -22,7 +22,7 @@ const orderSchema = new mongoose.Schema({
   idempotencyKey: { 
     type: String, 
     unique: true, 
-    sparse: true // null අගයන් බහුලව තිබුණද error එකක් නොපෙන්වන පරිදි
+    sparse: true 
   },
   createdAt: { type: Date, default: Date.now }
 });

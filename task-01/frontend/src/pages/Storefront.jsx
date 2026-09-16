@@ -227,7 +227,7 @@ const Storefront = () => {
               const stock = Number(product.stock) || 0;
               const reservedStock = Number(product.reservedStock) || 0;
               
-              // 5 minutes expiry check: විනාඩි 5ක් පැන ඇතොත් reserved stock එක 0 ලෙස ගණනය වේ
+              
               let effectiveReserved = reservedStock;
               let isExpired = false;
               if (product.reservationExpiresAt) {
@@ -300,7 +300,7 @@ const Storefront = () => {
                       <button
                         type="button"
                         onClick={(e) => {
-                          e.stopPropagation(); // Parent card click (navigation) එක වැළැක්වීමට
+                          e.stopPropagation(); 
                           handleAddToCart(product, prodId);
                         }}
                         disabled={!isAvailable}

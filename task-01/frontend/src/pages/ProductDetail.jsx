@@ -47,7 +47,7 @@ const ProductDetail = () => {
       if (addToCart && product) {
         addToCart(product);
         console.log('Added to cart successfully:', product.name);
-        // අවශ්‍ය නම් කාට් එකට ගිය බව පෙන්වීමට alert එකක් හෝ notification එකක් තබාගත හැක
+        
       } else {
         console.error('addToCart function or product is missing');
       }
